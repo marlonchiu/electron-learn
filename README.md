@@ -14,9 +14,28 @@
 
 ```bash
 npm install -g electron
+```
 
-# 克隆官方入门仓库、快速启动一个项目
+### 克隆官方入门仓库、快速启动一个项目
+
+```bash
 git clone https://github.com/electron/electron-quick-start
 cd electron-quick-start
 npm install && npm start
+```
+
+### 手动搭建一个项目
+
+- [开发一个简易的 Electron](https://electronjs.org/docs/tutorial/first-app)
+- [blog 说明](https://juejin.im/post/5c46ab47e51d45522b4f55b1#heading-1)
+
+### 脚手架构建项目
+
+> electron-forge 相当于 electron 的一个脚手架，可以让我们更方便的创建、运行、打包 electron 项目
+
+```bash
+npm install -g electron-forge
+electron-forge init my-new-app
+cd my-new-app
+npm start
 ```
