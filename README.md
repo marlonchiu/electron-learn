@@ -204,3 +204,13 @@ BrowserWindow.getFocusedWindow()  为 null
 > 系统托盘，托盘右键菜单、托盘图标闪烁 点击右上角关闭按钮隐藏到托盘(仿杀毒软件)
 >
 > 实例 `electrondemo08`
+
+## 消息通知、监听网络变 化、网络变化弹出通知框
+
+> 对应 demo `electrondemo09`
+
+### 消息通知
+
+> `Electron` 里面的消息通知是基于 `h5` 的通知 `api` 实现的
+>
+> 文档 https://developer.mozilla.org/zh-CN/docs/Web/API/notification
