@@ -156,3 +156,41 @@ npm start
   ```js
   let win = BrowserWindow.fromId(winId);
   ```
+
+## Electron Shell 模块
+
+![Electron Shell 模块](https://user-gold-cdn.xitu.io/2019/1/22/168740d96b3f32f4?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+### Shell 模块的使用
+
+> 文档 https://electronjs.org/docs/api/shell
+>
+> `Electron Shell` 模块在用户默认浏览器 中打开 `URL` 以及 `Electron DOM webview` 标签。`Shell`既属于主进程模块又是渲染进程模块
+>
+> shell 模块提供了集成其他桌面客户端的关联功能
+>
+> 对应 `electrondemo06`
+
+### `Electron DOM` `<webview>` 标签
+
+> `Webview` 与 `iframe` 有点相似，但是与 `iframe` 不同, `webview` 和你的应用运行的是不同的进程。它不拥有渲染进程的权限，并且应用和嵌入内容之间的交互全部都是异步的。因为这能 保证应用的安全性不受嵌入内容的影响。
+
+### 遗留问题
+
+```js
+// electrondemo06\main\menu.js
+
+BrowserWindow.getFocusedWindow()  为 null
+```
+
+## Electron dialog 弹出框
+
+![Electron dialog 弹出框](https://user-gold-cdn.xitu.io/2019/1/22/168740d979bf6f5d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+> 文档 https://electronjs.org/docs/api/dialog
+>
+> `dialog`属于主进程中的模块
+>
+> `dialog` 模块提供了 `api` 来展示原生的系统对话框，例如打开文件框，`alert` 框， 所以 `web` 应用可以给用户带来跟系统应用相同的体验
+>
+> 相关实例 `electrondemo07`
