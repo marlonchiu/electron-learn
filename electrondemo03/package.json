@@ -1,0 +1,15 @@
+{
+  "name": "electron-demo-03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^6.0.12"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
