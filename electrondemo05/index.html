@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Electron</title>
+</head>
+
+<body>
+  <button id="openWindowBtn">渲染进程和渲染进程的通信</button><br />
+  <p>-----------接收到另一个渲染进程的显示消息---------------------</p>
+  <p id="feedMsg"></p>
+
+</body>
+<script>
+  require('./render/openWindow.js')
+</script>
+
+</html>

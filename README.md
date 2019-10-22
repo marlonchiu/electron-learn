@@ -103,12 +103,56 @@ npm start
 - `ipcMain`:当在主进程中使用时，它处理从渲染器进程(网页)发送出来的异步和同步信息,当然也有可能从主进程向渲染进程发送消息。
 - `ipcRenderer`: 使用它提供的一些方法从渲染进程 (`web` 页面) 发送同步或异步的消息到主进程。 也可以接收主进程回复的消息
 
-### 渲染进程给主进程发送异步消息
+> 操作对应 demo `electrondemo04`
 
-### 渲染进程发送消息，主进程接收消息并反馈
+#### 渲染进程给主进程发送异步消息
 
-### 渲染进程给主进程发送同步消息
+#### 渲染进程发送消息，主进程接收消息并反馈
 
-### 渲染进程广播通知主进程打开窗口
+#### 渲染进程给主进程发送同步消息
+
+#### 渲染进程广播通知主进程打开窗口
 
 > 一般都是在渲染进程中执行广播操作，去通知主进程完成任务
+
+### 渲染进程与渲染进程之间的通信
+
+#### `localStorage` 传值
+
+> Electron 渲染进程通过 `localStorage` 给另一个渲染进程传值
+
+#### BrowserWindow 和 webContents 方式实现
+
+> 通过 `BrowserWindow` 和 `webContents` 模块实现渲染进程和渲染进程的通信
+>
+> `webContents` 是一个事件发出者.它负责渲染并控制网页，也是 `BrowserWindow` 对象的属性
+>
+> 操作对应 demo `electrondemo05`
+
+##### **需要了解的几个知识点**
+
+- 获取当前窗口的 `id`
+
+  ```js
+  const winId = BrowserWindow.getFocusedWindow().id;
+  ```
+
+- 监听当前窗口加载完成的事件
+
+  ```js
+  win.webContents.on("did-finish-load", event => {});
+  ```
+
+- 同一窗口之间广播数据
+
+  ```js
+  win.webContents.on("did-finish-load", event => {
+    win.webContents.send("msg", winId, "我是 index.html 的数据");
+  });
+  ```
+
+- 通过 `id` 查找窗口
+
+  ```js
+  let win = BrowserWindow.fromId(winId);
+  ```

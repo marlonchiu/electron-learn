@@ -11,4 +11,5 @@ ipcMain.on('openWindow', (event, data) => {
     height: 300
   })
   childWindow.loadURL(path.join('file:', __dirname, '../news.html'))
+  childWindow.webContents.openDevTools()
 })
