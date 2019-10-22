@@ -1,0 +1,16 @@
+{
+  "name": "electron-demo-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:watch": "nodemon --watch main.js --exec npm start"
+  },
+  "devDependencies": {
+    "electron": "^6.0.12"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

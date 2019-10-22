@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Electron</title>
+</head>
+
+<body>
+  <button id="send">在 渲染进程中执行主进程里的方法（异步）</button><br />
+  <button id="sendFeedback">在 渲染进程中执行主进程里的方法，并反馈给主进程（异步）</button><br />
+  <p id="sendFeedbackMsg"></p><br />
+  <button id="sendSync">渲染进程和主进程同步通信</button><br />
+  <button id="openWindowBtn">打开新窗口通信</button><br />
+
+</body>
+<script>
+  require('./render/ipcRender.js')
+  require('./render/openWindow.js')
+</script>
+
+</html>
