@@ -194,3 +194,13 @@ BrowserWindow.getFocusedWindow()  为 null
 > `dialog` 模块提供了 `api` 来展示原生的系统对话框，例如打开文件框，`alert` 框， 所以 `web` 应用可以给用户带来跟系统应用相同的体验
 >
 > 相关实例 `electrondemo07`
+
+## 系统托盘、托盘右键菜单、托盘图标闪烁
+
+![系统托盘、托盘右键菜单、托盘图标闪烁](https://user-gold-cdn.xitu.io/2019/1/22/168740d99cee62fc?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+> 文档 https://electronjs.org/docs/api/tray
+>
+> 系统托盘，托盘右键菜单、托盘图标闪烁 点击右上角关闭按钮隐藏到托盘(仿杀毒软件)
+>
+> 实例 `electrondemo08`
