@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Electron</title>
+</head>
+
+<body>
+  <div>
+    <h2>双击下面信息复制</h2>
+    <p id="msg">123456789</p>
+    <button id="plat">粘贴</button><br />
+    <input id="text" type="text" />
+  </div>
+  <div>
+    <h2>复制图片到界面</h2>
+    <button id="copyImg">复制图片</button><br />
+  </div>
+</body>
+<script>
+  require('./render/clipboard.js')
+</script>
+
+</html>

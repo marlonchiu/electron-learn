@@ -214,3 +214,25 @@ BrowserWindow.getFocusedWindow()  为 null
 > `Electron` 里面的消息通知是基于 `h5` 的通知 `api` 实现的
 >
 > 文档 https://developer.mozilla.org/zh-CN/docs/Web/API/notification
+
+## 注册全局快捷键/剪切板事件/nativeImage 模块
+
+> 对应演示 electrondemo10
+
+### 注册全局快捷键
+
+![注册全局快捷键](https://user-gold-cdn.xitu.io/2019/1/22/168740d9c32fc1ab?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+> `Electron` 注册全局快捷键 (`globalShortcut`) 以及 `clipboard` 剪 切板事件以及 `nativeImage` 模块(实现类似播放器点击机器码自动复制功 能)
+>
+> 键盘快捷键文档 https://electronjs.org/docs/tutorial/keyboard-shortcuts
+>
+> app 模块文档 https://electronjs.org/docs/api/app
+
+### 剪切板事件/nativeImage 模块
+
+![剪切板事件/nativeImage 模块](https://user-gold-cdn.xitu.io/2019/1/22/168740d9c3f72a22?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+> 剪切板文档 https://electronjs.org/docs/api/clipboard
+>
+> nativeImage 模块文档 https://electronjs.org/docs/api/native-image
