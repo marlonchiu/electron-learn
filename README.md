@@ -236,3 +236,41 @@ BrowserWindow.getFocusedWindow()  为 null
 > 剪切板文档 https://electronjs.org/docs/api/clipboard
 >
 > nativeImage 模块文档 https://electronjs.org/docs/api/native-image
+
+## 结合 electron-vue
+
+> [electron-vue GitHub 仓库](https://github.com/SimulatedGREG/electron-vue)
+>
+> [electron-vue 使用文档](https://simulatedgreg.gitbooks.io/electron-vue/content/cn/)
+
+### electron-vue 环境搭建、创建项目
+
+```bash
+npm install -g vue-cli
+
+vue init simulatedgreg/electron-vue my-project
+
+cd my-project
+
+yarn # or npm install
+
+yarn run dev # or npm run dev
+```
+
+## 打包发布可能出现的问题处理
+
+* [`electron-builder` 下载各种依赖出错](https://blog.csdn.net/cctvcqupt/article/details/87904368)
+* [electron打包太慢解决方法](https://my.oschina.net/u/1240907/blog/1926061)
+
+* 下载过程中的包下载失败的问题  可以自己手动下载到对应的位置
+
+  ```bash
+  C:\Users\zhaojd\AppData\Local\electron-builder\Cache
+  
+  C:\Users\zhaojd\AppData\Local\electron\Cache
+  
+  详情查看 docs 文件夹下的图片说明
+  ```
+
+* [**electron-builder-binaries** 依赖下载地址](https://github.com/electron-userland/electron-builder-binaries/releases)
+
