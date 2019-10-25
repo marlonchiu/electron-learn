@@ -1,9 +1,4 @@
-'use strict'
-
-import {
-  app,
-  BrowserWindow
-} from 'electron'
+import { app, BrowserWindow } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -15,29 +10,18 @@ if (process.env.NODE_ENV !== 'development') {
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
-  ? 'http://localhost:9080' : `file://${__dirname}/index.html`
+  ? `http://localhost:9080`
+  : `file://${__dirname}/index.html`
 
 function createWindow () {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 620,
+    height: 563,
     useContentSize: true,
-    width: 1280,
-    // 去掉顶部导航 去掉关闭按钮 最大化最小化按钮
-    // frame: false,
-    webPreferences: {
-      nodeIntegration: true // 表示可以使用nodejs的API
-    }
+    width: 1000
   })
-
-  // 隐藏顶部菜单
-  // mainWindow.setMenu(null)
-  // 菜单项
-  // require('./model/menu.js')
-  // 系统托盘相关
-  // require('./model/tray.js')
 
   mainWindow.loadURL(winURL)
 
