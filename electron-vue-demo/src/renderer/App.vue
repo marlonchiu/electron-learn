@@ -46,13 +46,63 @@
 
 <script>
 export default {
-  name: "electron-vue-demo",
+  name: 'electron-vue-demo',
   data() {
     return {
       winHeight: document.documentElement.clientHeight
-    };
+    }
+  },
+  sockets: {
+    connect: function() {
+      //vue客户端和socket.io服务器端建立连接以后触发的方法
+      console.log('socket connected')
+    },
+    serverEmit: function(val) {
+      //接收服务器广播的数据
+      console.log(val)
+      const option = {
+        title: '腾讯新闻',
+        body: val.title,
+        icon: require('path').join(__dirname, 'assets/favicon2.ico')
+      }
+      const myNotification = new window.Notification(option.title, option)
+
+      myNotification.onclick = () => {
+        // console.log('点击了');
+        this.$electron.shell.openExternal(val.url)
+      }
+    }
+  },
+  mounted() {
+    //监听网络变化
+    window.addEventListener('online', function() {
+      console.log('有网络了')
+    })
+    window.addEventListener('offline', function() {
+      const option = {
+        title: '提示!',
+        body: '网络已经断开，请检查您的网络设置!'
+        //  icon: path.join('main-process/favicon2.ico')
+      }
+      const myNotification = new window.Notification(option.title, option)
+      myNotification.onclick = () => {
+        console.log('点击了')
+      }
+    })
+
+    //监听右键菜单
+    window.addEventListener('contextmenu', e => {
+      e.preventDefault()
+      //给主进程广播事件   注意this指向
+      this.$electron.ipcRenderer.send('contextmenu')
+    })
+
+    // 监听窗口变化
+    window.onresize = () => {
+      this.winHeight = document.documentElement.clientHeight
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
