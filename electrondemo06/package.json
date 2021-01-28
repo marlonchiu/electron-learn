@@ -8,7 +8,7 @@
     "start:watch": "nodemon --watch main.js --exec npm start"
   },
   "devDependencies": {
-    "electron": "^6.0.12"
+    "electron": "^9.4.0"
   },
   "keywords": [],
   "author": "",
